@@ -16,11 +16,14 @@
 
 ## 🛠 Required Skills & Dependencies
 
-To function at full capacity, this skill integrates with the following specialized agent tools:
+To function at full capacity, this skill integrates with the following specialized agent tools. Use the provided installation commands to set them up via **ClawHub**:
 
-1.  **[multi-search-engine](https://github.com/openclaw/skills/tree/main/multi-search-engine)**: Used for broad market news and macroeconomic context.
-2.  **[agent-browser](https://github.com/openclaw/skills/tree/main/agent-browser)**: **Mandatory** for the *Anti-Hallucination* mechanism. It performs live "Visual Checks" on exchange websites to verify "Last Done Price" and time stamps.
-3.  **[smart-web-fetch](https://github.com/openclaw/skills/tree/main/smart-web-fetch)**: Handles robust data extraction from financial portals (Yahoo Finance, KLSE Screener, MalaysiaStock.biz).
+1.  **[multi-search-engine](https://clawhub.ai/gpyangyoujun/multi-search-engine)**: Used for broad market news and macroeconomic context.
+    - **Install**: `clawhub install gpyangyoujun/multi-search-engine`
+2.  **[agent-browser](https://github.com/vercel-labs/agent-browser)**: **Mandatory** for the *Anti-Hallucination* mechanism. It performs live "Visual Checks" on exchange websites to verify "Last Done Price" and time stamps.
+    - **Install**: `npm install -g agent-browser && agent-browser install`
+3.  **[smart-web-fetch](https://clawhub.ai/jacurtwong/smart-web-fetch)**: Handles robust data extraction from financial portals (Yahoo Finance, KLSE Screener, MalaysiaStock.biz).
+    - **Install**: `clawhub install jacurtwong/smart-web-fetch`
 
 ---
 

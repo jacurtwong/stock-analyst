@@ -16,11 +16,14 @@
 
 ## 🛠 依赖插件与技能
 
-为了发挥最大效能，本技能与以下 OpenClaw 插件深度集成：
+为了发挥最大效能，本技能与以下 OpenClaw 插件深度集成。请使用提供的 **ClawHub** 命令进行安装：
 
-1.  **[multi-search-engine](https://github.com/openclaw/skills/tree/main/multi-search-engine)**：用于抓取宏观经济背景及行业新闻。
-2.  **[agent-browser](https://github.com/openclaw/skills/tree/main/agent-browser)**：**强制要求**。用于执行“防幻觉”视觉校验，直接访问交易所网页核实实时成交价与时间戳。
-3.  **[smart-web-fetch](https://github.com/openclaw/skills/tree/main/smart-web-fetch)**：用于从 Yahoo Finance、KLSE Screener 等门户高效提取结构化数据。
+1.  **[multi-search-engine](https://clawhub.ai/gpyangyoujun/multi-search-engine)**：用于抓取宏观经济背景及行业新闻。
+    - **安装命令**: `clawhub install gpyangyoujun/multi-search-engine`
+2.  **[agent-browser](https://github.com/vercel-labs/agent-browser)**：**强制要求**。用于执行“防幻觉”视觉校验，直接访问交易所网页核实实时成交价与时间戳。
+    - **安装命令**: `npm install -g agent-browser && agent-browser install`
+3.  **[smart-web-fetch](https://clawhub.ai/jacurtwong/smart-web-fetch)**：用于从 Yahoo Finance、KLSE Screener 等门户高效提取结构化数据。
+    - **安装命令**: `clawhub install jacurtwong/smart-web-fetch`
 
 ---
 
