@@ -1,4 +1,4 @@
-# 📈 股票分析助手 (Stock Analyst v1.3.3)
+# 📈 股票分析助手 (Stock Analyst v1.3.4)
 
 **Stock Analyst** 是一款专为 AI 智能体（如 OpenClaw/Claude）设计的高精度金融分析引擎。它集成了拥有 20 年经验的高级金融分析师的专业知识，专注于 **美股 (Wall Street)**、**马股 (Bursa Malaysia/KLSE)** 及 **港股 (HKEX)** 市场。
 
@@ -20,10 +20,10 @@
 
 1.  **[multi-search-engine](https://clawhub.ai/gpyangyoujun/multi-search-engine)**：用于抓取宏观经济背景及行业新闻。
     - **安装命令**: `clawhub install gpyangyoujun/multi-search-engine`
-2.  **[agent-browser](https://github.com/vercel-labs/agent-browser)**：**强制要求**。用于执行“防幻觉”视觉校验，直接访问交易所网页核实实时成交价与时间戳。
-    - **安装命令**: `npm install -g agent-browser && agent-browser install`
-3.  **[smart-web-fetch](https://clawhub.ai/jacurtwong/smart-web-fetch)**：用于从 Yahoo Finance、KLSE Screener 等门户高效提取结构化数据。
+2.  **[smart-web-fetch](https://clawhub.ai/jacurtwong/smart-web-fetch)**：**首选依赖**。用于执行“防幻觉”视觉校验，通过网页快照核实实时成交价与时间戳，避免本地浏览器带来的系统负担。
     - **安装命令**: `clawhub install jacurtwong/smart-web-fetch`
+3.  **[agent-browser](https://github.com/vercel-labs/agent-browser)**：可选备份。仅在处理需要深度交互的复杂网页时动用。
+    - **安装命令**: `npm install -g agent-browser && agent-browser install`
 
 ---
 
@@ -41,7 +41,7 @@
 - **美股 (NYSE/NASDAQ)**：Yahoo Finance (实时) + Finviz (内部交易/比率) + Seeking Alpha (72h 新闻催化剂)。
 
 ### 3. 防幻觉与校准机制
-- **视觉二次确认**：若 API 与网页抓取的价格差异 > 1%，引擎将强制通过 `agent-browser` 开启浏览器进行人工级别的视觉校验。
+- **智能校验**：若 API 与网页抓取的价格差异 > 1%，引擎将强制通过 `smart-web-fetch` 进行网页快照核实。
 - **时间戳标注**：每份报告均包含强制性的采集时间：`[数据采集时间：YYYY-MM-DD HH:mm:ss]`。
 
 ---

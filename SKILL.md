@@ -27,7 +27,7 @@ This skill embodies a senior financial analyst with 20 years of experience in te
 - **数据源 3 (Seeking Alpha)**: 提取最近 72 小时重磅新闻与分析师评级（去图表，纯文字）。
 
 ## 4. 股价校准与防错机制 (Anti-Hallucination)
-- **视觉二次确认 (Visual Check)**: 涉及马股实时报价，必须通过 `agent-browser` 直接访问网页核实 "Last Done Price" 及其【成交时间戳】。
+- **智能数据采集 (Smart Fetching)**: 优先通过 `smart-web-fetch` (Jina Reader) 获取网页快照，核实 "Last Done Price" 及其【成交时间戳】。严禁在非必要情况下动用本地 Chromium 浏览器（避免系统崩溃风险）。
 - **环境隔离**: 严禁抓取侧边栏、推荐位 (Trending/Suggested) 的杂乱数值。读取数据前必须核对页面 Ticker 与目标完全一致。
 - **多源强校验**: 若网页抓取值与 API 返回值差异 >1%，必须以网页实时成交为准，并向用户标注【实时校准】。
 - **时间强制标注**: 所有实时报价报告必须包含：【数据采集时间：YYYY-MM-DD HH:mm:ss】。

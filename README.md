@@ -1,4 +1,4 @@
-# 📈 Stock Analyst (v1.3.3)
+# 📈 Stock Analyst (v1.3.4)
 
 **Stock Analyst** is a high-precision financial analysis engine designed for AI agents (like OpenClaw/Claude). It embodies the expertise of a senior financial analyst with 20 years of experience, specializing in the **US (Wall Street)**, **Malaysia (Bursa Malaysia/KLSE)**, and **Hong Kong (HKEX)** markets.
 
@@ -20,10 +20,10 @@ To function at full capacity, this skill integrates with the following specializ
 
 1.  **[multi-search-engine](https://clawhub.ai/gpyangyoujun/multi-search-engine)**: Used for broad market news and macroeconomic context.
     - **Install**: `clawhub install gpyangyoujun/multi-search-engine`
-2.  **[agent-browser](https://github.com/vercel-labs/agent-browser)**: **Mandatory** for the *Anti-Hallucination* mechanism. It performs live "Visual Checks" on exchange websites to verify "Last Done Price" and time stamps.
-    - **Install**: `npm install -g agent-browser && agent-browser install`
-3.  **[smart-web-fetch](https://clawhub.ai/jacurtwong/smart-web-fetch)**: Handles robust data extraction from financial portals (Yahoo Finance, KLSE Screener, MalaysiaStock.biz).
+2.  **[smart-web-fetch](https://clawhub.ai/jacurtwong/smart-web-fetch)**: **Preferred** for data extraction and the *Anti-Hallucination* mechanism. It performs live snapshot checks to verify "Last Done Price" and time stamps without heavy local browser overhead.
     - **Install**: `clawhub install jacurtwong/smart-web-fetch`
+3.  **[agent-browser](https://github.com/vercel-labs/agent-browser)**: Optional backup for complex interactive sites.
+    - **Install**: `npm install -g agent-browser && agent-browser install`
 
 ---
 
@@ -41,7 +41,7 @@ The engine automatically routes queries based on ticker format:
 - **US (NYSE/NASDAQ)**: Yahoo Finance (Real-time) + Finviz (Insiders/Ratios) + Seeking Alpha (72h News Catalysts).
 
 ### 3. Anti-Hallucination & Calibration
-- **Visual Verification**: If a price discrepancy > 1% is detected between APIs and web scrapers, the engine triggers a mandatory manual browser check via `agent-browser`.
+- **Smart Verification**: If a price discrepancy > 1% is detected between APIs and structured data, the engine triggers a mandatory snapshot check via `smart-web-fetch`.
 - **Fused Reporting**: Every report includes a mandatory timestamp: `[Data Collected: YYYY-MM-DD HH:mm:ss]`.
 
 ---
